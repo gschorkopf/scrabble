@@ -1,0 +1,36 @@
+<html>
+<head><title>Scrabble Scorer</title></head>
+
+<body>
+  <h1> Scrabble Scorer </h1>
+
+  <form action="/create" method="post">
+    <p>Please input your word:<br />
+      <input name="word" type="text" /></p>
+    <p>Please input your word bonus:<br />
+      <input name="bonus" type="radio" value="single" checked="checked" />Single
+      <input name="bonus" type="radio" value="double" />Double
+      <input name="bonus" type="radio" value="triple" />Triple
+    </P>
+      <input name="submit" type="submit" value="Submit" />
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th score="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @words.each do |word| %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.score %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</body>
+</html>
